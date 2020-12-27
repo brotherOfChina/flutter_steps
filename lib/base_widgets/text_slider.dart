@@ -19,6 +19,8 @@ class TextSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -28,7 +30,7 @@ class TextSlider extends StatelessWidget {
           child: Text(title),
         ),
         Container(
-          width: 310,
+          width: screenWidth-80,
           alignment: Alignment.center,
           child: Slider(value: value, max: max, min: min, onChanged: onChanged),
         ),

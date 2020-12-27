@@ -87,6 +87,7 @@ class _ZpjContainerState extends State {
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -172,7 +173,7 @@ class _ZpjContainerState extends State {
                       child: Text("margin"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _margin,
@@ -197,7 +198,7 @@ class _ZpjContainerState extends State {
                       child: Text("padding"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _padding,
@@ -226,7 +227,7 @@ class _ZpjContainerState extends State {
                       child: Text("colorR"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _colorR,
@@ -251,7 +252,7 @@ class _ZpjContainerState extends State {
                       child: Text("colorG"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _colorG,
@@ -276,7 +277,7 @@ class _ZpjContainerState extends State {
                       child: Text("colorB"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _colorB,
@@ -305,7 +306,7 @@ class _ZpjContainerState extends State {
                       child: Text("alignmentX"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _alignmentX,
@@ -332,7 +333,7 @@ class _ZpjContainerState extends State {
                       child: Text("alignmentY"),
                     ),
                     Container(
-                      width: 310,
+                      width: screenWidth-80,
                       alignment: Alignment.center,
                       child: Slider(
                         value: _alignmentY,

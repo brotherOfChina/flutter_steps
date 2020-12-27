@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps/base_widgets/zpj_container.dart';
+import 'package:flutter_steps/base_widgets/zpj_row_column.dart';
 import 'package:flutter_steps/bean/directory.dart';
 
 class BaseWidgets extends StatelessWidget {
@@ -10,9 +11,12 @@ class BaseWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _list.add(WidgetsDirectory("Container", "一个拥有绘制、定位、调整大小的 widget。",
-        widgetChild: ZpjContainer(),routeName: "zpj_container"),);
-    _list.add(WidgetsDirectory("Row", "在水平方向上排列子widget的列表。"));
+    _list.add(
+      WidgetsDirectory("Container", "一个拥有绘制、定位、调整大小的 widget。",
+          widgetChild: ZpjContainer(), routeName: "zpj_container"),
+    );
+    _list.add(WidgetsDirectory("Row", "在水平方向上排列子widget的列表。",
+        widgetChild: ZpjRowColumn(), routeName: "zpj_row_column"));
     _list.add(WidgetsDirectory("Column", "在垂直方向上排列子widget的列表。"));
     _list.add(WidgetsDirectory("Text", "单一格式的文本"));
     _list.add(WidgetsDirectory("Icon", "A Material Design icon."));
@@ -37,10 +41,8 @@ class BaseWidgets extends StatelessWidget {
           list: _list,
         ),
       ),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        backgroundColor: Colors.white
-      ),
+      theme:
+          ThemeData(primarySwatch: Colors.blue, backgroundColor: Colors.white),
       routes: routes,
     );
   }

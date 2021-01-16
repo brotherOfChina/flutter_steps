@@ -4,21 +4,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps/base_widgets/zpj_container.dart';
 import 'package:flutter_steps/base_widgets/zpj_row_column.dart';
+import 'package:flutter_steps/base_widgets/zpj_text.dart';
 import 'package:flutter_steps/bean/directory.dart';
+
+double screenWidth = 0;
+double screenHeight = 0;
 
 class BaseWidgets extends StatelessWidget {
   List<WidgetsDirectory> _list = List();
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+    screenHeight = MediaQuery.of(context).size.height;
     _list.add(
       WidgetsDirectory("Container", "一个拥有绘制、定位、调整大小的 widget。",
           widgetChild: ZpjContainer(), routeName: "zpj_container"),
     );
     _list.add(WidgetsDirectory("Row", "在水平方向上排列子widget的列表。",
-        widgetChild: ZpjRowColumn(), routeName: "zpj_row_column"));
-    _list.add(WidgetsDirectory("Column", "在垂直方向上排列子widget的列表。"));
-    _list.add(WidgetsDirectory("Text", "单一格式的文本"));
+        widgetChild: ZpjRowColumn(
+          isRow: true,
+        ),
+        routeName: "zpj_row"));
+    _list.add(WidgetsDirectory("Column", "在垂直方向上排列子widget的列表。",
+        widgetChild: ZpjRowColumn(
+          isRow: false,
+        ),
+        routeName: "zpj_column"));
+    _list.add(
+      WidgetsDirectory("Text", "单一格式的文本",
+          routeName: "zpj_text", widgetChild: ZpjText()),
+    );
     _list.add(WidgetsDirectory("Icon", "A Material Design icon."));
     _list.add(WidgetsDirectory(
         "RaisedButton", "Material Design中的button， 一个凸起的材质矩形按钮"));
